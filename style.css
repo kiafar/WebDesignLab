@@ -1,0 +1,223 @@
+/* background-size, boxshadow, linear gradient,word-wrap ,text-shadow, column-count, 2d transform */
+body {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 62.5%; /* 62.5% technique:http://clagnut.com/blog/348/ */
+	color:white;
+	background-color: #333;
+	min-width:58.3em;
+	padding: 0 1%;
+	margin: 0;
+	/* background-image:url('resources/pettile.jpg'); */
+}
+#header {
+	position:fixed;
+	width:98%;
+	min-width:38.2em;
+	height:4.8em;
+	background-color: #333;
+	border-bottom:1px solid #4a4a4a;
+	font-size:1em;
+	/* overcomming the padding of the body */
+	margin:0 0 0 -1%;
+	/* making the head bar full width */
+	padding:0 1%;
+	/* position:relative and opacity enabled elements are on top of this so: */
+	z-index:99;
+}
+#header:after {
+	content:".";
+	clear:both;
+	display:block;
+	height:0;
+	visibility:hidden;
+}
+#headtext {
+	width:260px;
+	float:left;
+}
+#headtext h1 {
+	font-size:1.8em;
+	color:white;
+}
+#nav {
+	width:450px;
+	float:right;
+	font-size:1.4em;
+}
+#nav ul{
+	margin:0;
+}
+.navlist {
+	display:inline;
+}
+.navlink{
+	text-decoration:none;
+	color:white;
+	text-align:center;
+	box-sizing:border-box;
+	height:3.4em;
+}
+.navlink:link, .navlink:visited {
+    color: white;
+	transition: color .3s;
+	margin:auto;
+	padding:5px 0;
+    width:100px;
+    text-decoration: none;
+	float:left;
+	padding:1em 0;
+	
+}
+.navlink:hover, .navlink:active {
+	color:#50bcb6;
+	transition: color .3s;
+	color:#50bcb6;
+}
+#navActive {
+	color:#50bcb6;
+	border-bottom: 5px solid #50bcb6;
+}
+#content {
+	padding-top:6em;
+}
+#content:after {
+	content:".";
+	clear:both;
+	display:block;
+	height:0;
+	visibility:hidden;
+}
+.column {
+	box-sizing:border-box;
+	text-align:justify;
+	float:left;
+	width:50%;
+	padding:0 1.4em;
+}
+.leftcolumn {
+}
+.rightcolumn {
+}
+.card {
+	width:100%;
+    background:#444;
+	line-height:1.6em;
+    border-bottom:3px solid #555;
+	font-size:1.4em;
+	margin:1em 0;
+	box-sizing:border-box;
+	display:inline-block;
+}
+.card p {
+	font-size:1.2em;
+	text-align:justify;
+	padding:0 1em;
+}
+.card-image {
+	width:98%;
+	height:200px;
+	padding:0;
+	margin:1%;
+    overflow:hidden;
+	/* this line fills the background with the image, no stretching */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+#footer {
+	font-size:1.4em;
+	padding:.1em;
+	line-height:1.6em;
+	color:white;
+	background-color:#222;
+	width:100%;
+	margin:1.5em 0 0 -1%;
+	padding:1em 1% 1em 1%;
+	text-align:center;
+}
+#footerlink:link, #footerlink:visited {
+    color: white;
+    text-decoration: none;
+}
+/* index.html specific elements */
+#homead {
+	width:102%;
+	background-color:#222;
+	height:25%;
+	margin:.5% 0 .5% -1%;
+}
+.homead-tile {
+	max-width:30%;
+	display:inline-block;
+	margin:1.5% 1.5% 0 1.5%;
+}
+.homead-image {
+	width:9em;
+	height:9em;
+	float:left;
+    overflow:hidden;
+	/* this line fills the background with the image, no stretching */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.homead-text{
+	float:left;
+	width:75%;
+	font-size:1.2em;
+	text-align:justify;
+	box-sizing:border-box;
+	padding:0 1em;
+	margin:-.8em 0 0 0;
+}
+.homead-tile:after {
+	content:".";
+	clear:both;
+	display:block;
+	height:0;
+	visibility:hidden;
+}
+/* services.html specific elements */
+#servicesad {
+	width:102%;
+	background-color:#222;
+	height:25%;
+	margin:0 0 0 -1%;
+	text-align:center;
+}
+.servicesad-tile {
+	width:22.5%;
+	display:inline-block;
+	margin:1.5% 1% 0 1%;
+}
+.servicesad-tile-image {
+	width:98%;
+	height:200px;
+	padding:0;
+	margin:1%;
+    overflow:hidden;
+	/* this line fills the background with the image, no stretching */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.servicesad-tile-image h2{
+	color:white;
+	text-align:left;
+	padding:1em 1em;
+	margin:0;
+	background-color:#555;
+	/* element opacity set */
+	/* Paul Fleming: http://stackoverflow.com/questions/11807286/how-to-make-div-background-color-transparent-in-css */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; /* IE 8 */
+	filter: alpha(opacity=60); /* IE 5-7 */
+	-moz-opacity: 0.7; /* Netscape */
+	-khtml-opacity: 0.7; /* Safari 1.x */
+	opacity: 0.7; /* Good browsers */
+	filter: alpha(opacity=70); /* For IE8 and earlier */
+	/* end of opacity change */
+	z-index:1; /* for some reason z-index gets encremented when opacity changed */
+}
+.servicesad-tile p {
+	font-size:1.3em;
+}
